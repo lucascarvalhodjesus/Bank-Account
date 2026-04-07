@@ -19,6 +19,18 @@ public abstract class Conta {
         else throw new IllegalArgumentException("valor incorreto para realizar a operação.");
     }
 
+    public String getNome(){
+        return nome;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public String getEndereco(){
+        return endereco;
+    }
+
     public double getSaldo(){
         return saldo;
     }

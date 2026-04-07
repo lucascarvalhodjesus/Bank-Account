@@ -1,5 +1,6 @@
 package app;
 
+import service.Arquivos;
 import service.Conta;
 import service.ContaCorrente;
 import service.ContaPoupanca;
@@ -19,7 +20,8 @@ public class Main {
         do{
             System.out.println("1 - Abrir uma conta:");
             System.out.println("2 - Operação bancaria:");
-            System.out.println("3 - sair!");
+            System.out.println("3 - Salva conta:");
+            System.out.println("4 - sair!");
             int menu = sc.nextInt();
             System.out.println();
             sc.nextLine();
@@ -57,6 +59,7 @@ public class Main {
                         if(minhaConta != null){
                             boolean voltar = false;
                             do {
+                                System.out.println(minhaConta.getNome());
                                 System.out.println("saldo em conta: " + minhaConta.getSaldo());
                                 System.out.println("Qual operação deseja fazer:");
                                 System.out.println("1 - Depositar | 2 - Sacar | 3 - Sair para o menu");
@@ -99,6 +102,14 @@ public class Main {
                     break;
 
                 case 3:
+                    if(minhaConta != null) {
+                        Arquivos.salvarDados(minhaConta);
+                    }else {
+                        System.out.println("Erro: Crie uma conta no menu 1 primeiro antes de salvar!");
+                    }
+                    break;
+
+                case 4:
                     System.out.println();
                     System.out.println("Obrigado!!");
                     sair = true;
