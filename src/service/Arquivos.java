@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 public class Arquivos {
 
     public static void salvarDados(Conta conta){
-        try(FileWriter fw = new FileWriter("dados_bancario.txt");
+        try(FileWriter fw = new FileWriter("dados_bancario.txt", true);
             PrintWriter pw = new PrintWriter(fw)){
 
             pw.println("========Dados do Cliente========");
